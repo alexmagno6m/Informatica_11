@@ -1,0 +1,255 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "1f6c5394-6964-4b06-a873-2493f9a9fc3d",
+   "metadata": {},
+   "source": [
+    "# Análisis de Regresión lineal"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "da04af23-eb4b-45b6-8aaa-d0682c9eaec4",
+   "metadata": {},
+   "source": [
+    "__Profesor:Alexander Acevedo Gomez__<br>\n",
+    "Ingeniero de Sistemas - Universidad Nacional de Colombia <br>\n",
+    "Magister en Modelado y Simulacion por Computador - Universidad Jorge Tadeo Lozano <br>\n",
+    "__Telegram: @Alex6m__"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ae7160b4-0cab-4eeb-8164-b5d669a3f2ec",
+   "metadata": {},
+   "source": [
+    "## Ejercicios"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c585e5f9-55db-4072-a603-c636316f3e4c",
+   "metadata": {},
+   "source": [
+    "Para obtener el sello debe escribir en su cuaderno:\n",
+    "- __Ámbito conceptual__: Análisis de regresión lineal\n",
+    "- __Competencia__: 1\n",
+    "- __Objetivo__: Realizar un análisis completo de regresión lineal y según el caso completar datos faltantes y predecir datos futuros."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e5a31b4c-3cba-4fbb-85e2-cb2511cbe589",
+   "metadata": {},
+   "source": [
+    "Realice los siguientes ejercicios en Excel, según las indicaciones del profesor, cada uno en su propia hoja de cálculo, guarde el archivo de la siguiente manera en su carpeta personal:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3ba9f2bd-6308-4dc4-9566-82153c9317f6",
+   "metadata": {},
+   "source": [
+    "```guia2_regresion_lineal_apellido_nombre_fecha```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "34087999-7857-476e-b1f7-ab1f7d260ed5",
+   "metadata": {},
+   "source": [
+    "Por ejemplo,"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "23c2309c-e1bd-4168-8060-e2e6f86d8bb4",
+   "metadata": {},
+   "source": [
+    "```guia2_regresion_lineal_Perez_Pablo_Marzo1```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2a7122e5-a225-4069-a755-2cb1aafa84e0",
+   "metadata": {},
+   "source": [
+    "## Crecimiento del eucalipto"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "df67ee4c-3fbb-462d-8728-9193a36c95f0",
+   "metadata": {},
+   "source": [
+    "La siguiente tabla muestra el crecimiento probable de un Eucalipto tomado de datos reales:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7d355c67-24f1-401e-96e7-667e00a10a31",
+   "metadata": {},
+   "source": [
+    "| Mes        | Altura (cm) |\n",
+    "|------------|-------------|\n",
+    "| Enero      | 12.5        |\n",
+    "| Febrero    | 17.5        |\n",
+    "| Marzo      | 22.5        |\n",
+    "| Abril      | ---        |\n",
+    "| Mayo       | 32.5        |\n",
+    "| Junio      | 37.5        |\n",
+    "| Julio      | ---        |\n",
+    "| Agosto     | 47.5        |\n",
+    "| Septiembre | 52.5        |\n",
+    "| Octubre    | 57.5        |\n",
+    "| Noviembre  | ---        |\n",
+    "| Diciembre  | 67.5        |"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e6dcd07a-b5fb-48c4-b6d3-332916d4fcf6",
+   "metadata": {},
+   "source": [
+    "1. Copie los datos en Excel, halle y conteste según el caso:\n",
+    "   1. Recta de regresión\n",
+    "   2. Coeficiente de determinación $R^2$\n",
+    "   3. Indique en terminos de porcentaje la calidad de ajuste del modelo\n",
+    "   4. Coeficiente de correlación\n",
+    "   5. Indique si la relacion entra las dos variables es Positiva o Negativa y si es fuerte, media o débil\n",
+    "   6. Justifique si es posible o no predecir datos faltantes y futuros\n",
+    "   7. En caso afirmativo, halle los datos faltantes y realice la predicción por un ańo mas."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7c012b4c-23b3-434d-9bc4-303d168dce9a",
+   "metadata": {},
+   "source": [
+    "## Presupuesto compra vivienda"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "40bf0894-3ef1-4429-8044-a68b959c681e",
+   "metadata": {},
+   "source": [
+    "Pedro desea comprar un apartamento de $100m^2$, pero los apartamentos que ha visitado tienen medidas inferiores, Pedro tomó nota del precio de cada uno de ellos y el area que ocupan obteniendo los siguientes datos."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "225735bd-101b-4f5e-8a51-6aeec5e76d45",
+   "metadata": {},
+   "source": [
+    "| Área (m²) | Precio estimado (millones) |\n",
+    "|-----------|----------------------------|\n",
+    "| 30        | 225                        |\n",
+    "| 35        | 250                        |\n",
+    "| 40        | 325                        |\n",
+    "| 45        | 375                        |\n",
+    "| 50        | 475                        |\n",
+    "| 55        | 525                        |\n",
+    "| 60        | 625                        |\n",
+    "| 65        | 675                        |\n",
+    "| 70        | 775                        |\n",
+    "| 75        | 825                        |"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bbdb10ab-f2dc-4928-ae50-b59b37b6ece2",
+   "metadata": {},
+   "source": [
+    "1. Según lo anterior desarrolle:\n",
+    "   1. La recta de regresión\n",
+    "   2. Coeficiente de determinación\n",
+    "   3. Porcentualmente que tan precisos son los datos recolectados por Pedro?\n",
+    "   4. Que relación se observa entre al area de la vivienda y su precio?\n",
+    "   5. Es posible establecer cuanto podria costar la vivienda que quiere Pedro?\n",
+    "   6. Si es asi, cual sería su precio?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "de5d6dba-f674-4e54-aef4-fdba89760881",
+   "metadata": {},
+   "source": [
+    "## Desbordamiento Rio"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "25ce350f-9927-4ee2-af25-136fd634c152",
+   "metadata": {},
+   "source": [
+    "Juan vive cerca de la cuenca alta del rio Fucha en la ciudad de\n",
+    "Bogotá, ha notado como el nivel del caudal del rio ha venido en aumento debido a las fuertes lluvias que han caído en la ciudad durante el mes de abril, cerca de su casa , hay un indicador de altura de caudal, que Juan ha venido revisando a diario (con excepción de dos días) y de acuerdo a sus observaciones ha obtenido los siguientes resultados:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "48db70dd-f165-463c-b3ba-42a6baa74da6",
+   "metadata": {},
+   "source": [
+    "|     Dia    |     Altura del   caudal en centímetros (cms)    |\n",
+    "|------------|-------------------------------------------------|\n",
+    "|     1      |     107                                         |\n",
+    "|     2      |     112                                         |\n",
+    "|     3      |     110                                         |\n",
+    "|     4      |     113                                         |\n",
+    "|     5      |     116                                         |\n",
+    "|     6      |     118                                         |\n",
+    "|     7      |     117                                         |\n",
+    "|     8      |     No observo –   DEJAR VACIO                  |\n",
+    "|     9      |     No observo –   DEJAR VACIO                  |\n",
+    "|     10     |     122                                         |"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e46a0671-1b43-42d8-8a70-efb528cdf02b",
+   "metadata": {},
+   "source": [
+    "Si las lluvias siguen a ese ritmo a Juan le preocupa que el caudal llegue al punto de desbordamiento, el cual se ha fijado en 135 cms."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "479ea963-4df2-42a1-b775-e62df9ab7335",
+   "metadata": {},
+   "source": [
+    "1. De acuerdo a lo anterior, determina:\n",
+    "    1. La línea de tendencia de los datos\n",
+    "    2. La ecuación de regresión lineal y el coeficiente de determinación R2\n",
+    "    3. El coeficiente de correlación de Pearson (R)\n",
+    "    4. Analiza si es posible establecer un pronóstico de datos futuros.\n",
+    "    5. Si es posible realizar el pronóstico, agrega la fórmula de la ecuación de regresión y halla los datos futuros hasta el día 30.\n",
+    "    6. ¿De continuar con el ritmo de lluvias en que día se alcanzaría al punto de desbordamiento?to?\r\n",
+    "ento?\r\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
